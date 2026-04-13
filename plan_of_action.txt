@@ -1,0 +1,26 @@
+GitHub User Activity - roadmap.sh
+
+Folder structure:
+
+GitHubUserActivity/
+    |- github_user_activity_cli.py -> To define the Command Line Interface for this project which makes use of the other files
+    |- github_service.py -> For calling and fetching data from the GitHub API
+    |- github_user_activity_manager.py -> For defining the function which processes and displays user activity (with filtering by event type included) 
+    |- cache.py -> For caching user activity into user_activity.json
+    |- user_activity.json -> Stores user activity for caching purposes
+
+1. github_user_activity_cli.py:
+    * main() - For parsing CLI arguments. Calls the display_data(event_type) function from github_user_activity_manager.py
+
+2. github_service.py:
+    * get_activity_data(username) - For fetching data from the GitHub API.
+
+3. github_user_activity_manager.py:
+    * display_data(username, event_type) - Return data to be displayed either from cache or from API. Filter by event type if that argument is present. Calls either (get_activity_data() and store_data_into_cache()) or get_data_from_cache() and then filters that data if required.
+
+4. cache.py:
+    * store_data_into_cache(username, data) - For storing data into the json file
+    * get_data_from_cache(username) - For fetching data from cache
+
+Caching:
+Datetime is stored along with data to be stored into the json file. When fetching the data form the cache get_data_from_cache() checks the date stored with the data. And if it is older than a day, the cache is to be updated and the function returns None.
