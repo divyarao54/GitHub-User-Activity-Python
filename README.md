@@ -2,7 +2,7 @@
 
 **Problem Statement URL** - [https://roadmap.sh/projects/github-user-activity](https://roadmap.sh/projects/github-user-activity)
 
-**Solution Link** -
+**Solution Link** - [https://roadmap.sh/projects/github-user-activity/solutions?u=690b33dfce70eef65bc6b75e](https://roadmap.sh/projects/github-user-activity/solutions?u=690b33dfce70eef65bc6b75e)
 
 ## Usage Instructions
 
